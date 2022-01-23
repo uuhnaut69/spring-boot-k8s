@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: spring-boot-k8s
+  name: spring-boot-k8s
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-boot-k8s
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: spring-boot-k8s
+    spec:
+      containers:
+      - image: uuhnaut69/spring-demo
+        name: spring-demo
+        resources: {}
+status: {}
