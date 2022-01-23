@@ -7,12 +7,12 @@ metadata:
   name: spring-boot-k8s
 spec:
   ports:
-  - name: 80-8080
-    port: 80
-    protocol: TCP
-    targetPort: 8080
+    - name: 80-8080
+      port: 80
+      protocol: TCP
+      targetPort: 8080
   selector:
     app: spring-boot-k8s
   type: ClusterIP
 status:
-  loadBalancer: {}
+  loadBalancer: { }
