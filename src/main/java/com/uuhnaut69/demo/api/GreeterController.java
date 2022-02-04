@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreeterController {
 
-  @GetMapping("/greeter")
-  public String greeter() {
-    return "Hello k8s";
-  }
+    @GetMapping("/greeter")
+    public String greeter() {
+        return "Hello k8s";
+    }
 }
