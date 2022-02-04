@@ -2,7 +2,19 @@
 
 Spring boot deploy k8s example
 
+## Prerequisites
+
+- `Java 17`
+- `Docker / Docker-compose`
+- `Minikube`
+
 ## Get Started
+
+- [x] Init sample application
+- [x] Deploy sample application k8s
+- [ ] CRUD app sample
+- [ ] Deploy Postgres k8s
+- [ ] Deploy oauth2 service k8s (Keycloak)
 
 ### 1. Install minikube
 
