@@ -12,7 +12,7 @@ Spring boot deploy k8s example
 
 - [x] Init sample application
 - [x] Deploy sample application k8s
-- [ ] CRUD app sample
+- [x] CRUD app sample
 - [ ] Deploy Postgres k8s
 - [ ] Deploy oauth2 service k8s (Keycloak)
 

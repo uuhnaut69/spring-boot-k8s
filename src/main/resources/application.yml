@@ -1,8 +1,21 @@
 server:
-  shutdown: graceful
-
+  port: 8080
+spring:
+  application:
+    name: demo-project
+  datasource:
+    url: jdbc:postgresql://${PG_HOST:localhost}:${PG_PORT:5432}/${PG_DB:postgres}
+    username: ${PG_USER:postgres}
+    password: ${PG_PASSWORD:postgres}
+  jpa:
+    open-in-view: false
+  flyway:
+    url: ${spring.datasource.url}
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+        exclude: "env,beans"

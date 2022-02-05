@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS todo
+(
+    id           BIGSERIAL PRIMARY KEY,
+    task         VARCHAR(255) NOT NULL,
+    done         BOOLEAN NOT NULL  DEFAULT FALSE,
+    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_date TIMESTAMP
+);
