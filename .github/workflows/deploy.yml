@@ -36,11 +36,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Docker login
-      env:
-        DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
-        DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-      run: docker login -u $DOCKER_USER -p $DOCKERHUB_TOKEN
+    - name: Login to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Build docker image
       run: mvn spring-boot:build-image -DskipTests=true -Dspring-boot.build-image.imageName=uuhnaut69/spring-demo
     - name: Push docker image
