@@ -26,6 +26,7 @@ jobs:
       run: mvn -DskipTests=true -B package --file pom.xml
   
   docker:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
