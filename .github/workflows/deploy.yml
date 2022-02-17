@@ -1,7 +1,11 @@
 # This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Java CI with Maven
+name: Deploy
+
+env:
+  IMAGE_NAME: uuhnaut69/spring-demo
+  VERSION: latest
 
 on:
   push:
@@ -53,6 +57,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build docker image
-        run: mvn spring-boot:build-image -DskipTests=true -Dspring-boot.build-image.imageName=uuhnaut69/spring-demo
-      - name: Push docker image
-        run: docker push uuhnaut69/spring-demo
+        run: mvn spring-boot:build-image -DskipTests=true -Dspring-boot.build-image.imageName=${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+      - name: Publish container image
+        run: docker push ${{ env.IMAGE_NAME }}:${{ env.VERSION }}
